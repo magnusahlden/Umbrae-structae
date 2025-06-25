@@ -1,0 +1,45 @@
+# Umbrae structae
+
+umbrae structuae is latin for "Structured ghosts"
+its a desktop app to handle incoming jobs for a set of agents
+through an inbox. 
+then it will display a trello like interface where tasks can be moved fro left to right
+moving the tasks from:
+inbox
+prioritized
+suggested plan
+accepted plans
+to executing plan
+to waiting for user input
+to completed. 
+
+a task can ping pong between "excuting plan" to "waiting for user input" as many times as neccesary
+until the sugehstef plan has reched its goal state. 
+
+a task can be moved from invox to prioritized only by a human or a human defined rule. 
+ tadk in prioritized eill be looked at by a planning agent. the planning agent will suggest a plan on how to resolve the task. 
+the plan is then presented in the "suggested plan" stage. 
+here a user can choose to accept or reject thr plan. 
+if the plan was rejected it will be moved back to the planning agent with some feedback pl how to bettwr come up with a plan. 
+
+a plan is made up by buidling blocks that either 
+- do an action
+- query for data
+- ask for user input eith boolean, or free text
+- choose a path based on data or inpur
+
+on top of the plan steps each plan also gets an permission slip which is a permit certificate to do something the user agrees to. such as execute dangerous plan steps, fetch external data etc
+
+
+
+a plan can be considered a very simple programming language. 
+actions are defined as java objects that take an unmutable taskobject as input and return an responseobject. 
+actions are divided into different types:
+- classifiers (classify the data input)
+- summarizers (reduces data complexity)
+- external data fetching (mcp calling)
+- update database 
+- query database
+
+each action can either be safe or dangerous: actions that require end user approval. 
+
